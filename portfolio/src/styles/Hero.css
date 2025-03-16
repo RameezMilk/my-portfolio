@@ -1,0 +1,68 @@
+.hero {
+    display: flex;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    overflow: hidden; /* Prevents overflow during animation */
+    transition: background-color 1.0s ease-in-out;
+  }
+  
+  .hero.dark-mode {
+    background: url("../assets/starry-night.gif"); /* ✅ Transition to GIF */
+  }
+  
+  .hero-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .hero-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .highlight {
+    color: #8956FB;
+  }
+  
+  .resume-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .resume-btn:hover {
+    background-color: #8956FB;
+  }
+  
+  /* New Spacing Below Resume Button */
+  .eclipse-button-container {
+    margin-top: 40px; /* Increased spacing */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hero-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 2;
+  }
+  
+  .hero-image {
+    height: 85%;
+    object-fit: contain;
+  }
+
+  
