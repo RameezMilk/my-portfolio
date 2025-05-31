@@ -1,14 +1,9 @@
 .hero {
     display: flex;
     height: 100vh;
-    background-color: white;
+    background-color: black;
     position: relative;
-    overflow: hidden; /* Prevents overflow during animation */
-    transition: background-color 1.0s ease-in-out;
-  }
-  
-  .hero.dark-mode {
-    background: url("../assets/starry-night.gif"); /* ✅ Transition to GIF */
+    overflow: hidden;
   }
   
   .hero-left {
@@ -23,7 +18,7 @@
   .hero-text {
     font-size: 48px;
     font-weight: bold;
-    color: black;
+    color: white;
   }
   
   .highlight {
@@ -33,8 +28,8 @@
   .resume-btn {
     margin-top: 20px;
     padding: 12px 24px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -43,13 +38,7 @@
   
   .resume-btn:hover {
     background-color: #8956FB;
-  }
-  
-  /* New Spacing Below Resume Button */
-  .eclipse-button-container {
-    margin-top: 40px; /* Increased spacing */
-    display: flex;
-    justify-content: center;
+    color: white;
   }
   
   .hero-right {

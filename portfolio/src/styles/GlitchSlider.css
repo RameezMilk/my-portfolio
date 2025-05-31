@@ -1,0 +1,82 @@
+.glitch-container {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  height: 100%;
+}
+
+.image-stack {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-wrapper {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.base-image,
+.overlay-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.base-image{
+    width: 90%;
+    top: 10px;
+    left: 30px;
+    filter: hue-rotate(100deg) saturate(5);
+}
+
+.overlay-image {
+  opacity: 0;
+  top: -40px;
+  left: -10px;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Glitch effect */
+.glitch {
+  animation: glitch 0.5s linear;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(5px, -5px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(-5px, -5px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(5px, 5px);
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+} 
