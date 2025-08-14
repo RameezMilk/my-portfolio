@@ -37,7 +37,6 @@ const Landing = () => {
 
   return (
     <section className="landing-section">
-      {/* Video temporarily disabled
       <video
         autoPlay
         loop
@@ -48,7 +47,6 @@ const Landing = () => {
         <source src="/videos/particles.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      */}
 
       {/* Cube */}
       <div className="cube-wrapper">
