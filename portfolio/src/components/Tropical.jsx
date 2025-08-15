@@ -1,10 +1,17 @@
+
 import React from "react";
+import Mission from "./Mission";
+import "../styles/Tropical.css";
+
 
 const Tropical = () => (
-  <section className="biome-section tropical">
-    <h2>Tropical Ruins</h2>
-    {/* Add tropical biome visuals and content here */}
-  </section>
+  <>
+    <Mission />
+    <section className="biome-section tropical">
+      <h1 className="tropical-title">Overgrove Jungle</h1>
+      {/* Add tropical biome visuals and content here */}
+    </section>
+  </>
 );
 
 export default Tropical;

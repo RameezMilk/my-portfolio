@@ -1,0 +1,97 @@
+.mission-description {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(20, 20, 20, 0.85);
+  padding: 2rem 2.2rem 1.5rem 2.2rem;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.18);
+  font-size: 1.08rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.mission-log-label {
+  color: #ff003c;
+  font-family: 'Syne Mono', monospace;
+  font-size: 1.02rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.04em;
+}
+.mission-section {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  opacity: 1;
+}
+
+.mission-fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 2.2s cubic-bezier(0.4,0,0.2,1);
+}
+.mission-fade-overlay.fade-out {
+  opacity: 0;
+}
+
+
+
+.fade-child {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.1s cubic-bezier(0.4,0,0.2,1), transform 1.1s cubic-bezier(0.4,0,0.2,1);
+}
+.mission-section.fade-in .fade-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission-section > .flames-container:first-of-type {
+  left: 0;
+  right: auto;
+}
+.mission-section > .flames-container:last-of-type {
+  right: 0;
+  left: auto;
+}
+.mission-section > .flames-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.mission-header {
+  margin-bottom: 2.5rem;
+}
+
+.mission-title {
+  font-size: 2.5rem;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.mission-subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin: 0;
+}
