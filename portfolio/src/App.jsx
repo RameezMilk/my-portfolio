@@ -1,8 +1,14 @@
 import React from "react";
-import Landing from "./components/Landing";
+import World from "./components/World";
+import { WorldProvider } from "./context/WorldContext.jsx";
+
 
 const App = () => {
-  return <Landing />;
-};
+  return (
+    <WorldProvider>
+      <World />
+    </WorldProvider>
+  );
+}
 
 export default App;

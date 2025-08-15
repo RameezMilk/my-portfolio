@@ -1,0 +1,162 @@
+.biome-divider {
+  border: none;
+  height: 2px;
+  width: 230px; /* or your preferred width */
+  max-width: 100%;
+  margin: 0.15em 0 1em 0;
+  margin-left: 0;
+  margin-right: auto;
+  background: linear-gradient(90deg, #ff003c 0%, #ff4e7a 60%, #ff003c 100%);
+  box-shadow: 0 0 2px 0.5px #ff003c88;
+  display: block;
+}
+/* DecodeText styles */
+.decode-title {
+  text-align: left;
+  font-family: 'Dune', 'Orbitron', sans-serif;
+  color: #ff003c;
+  background: none;
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  user-select: none;
+  padding: 0.15em 0.5em;
+  display: inline-block;
+  box-shadow: none;
+}
+.decode-letter {
+  display: inline-block;
+  min-width: 1ch;
+  transition: color 0.3s;
+}
+.decode-letter.space {
+  min-width: 1.5ch;
+}
+@font-face {
+  font-family: 'Dune';
+  src: url('/fonts/Dune_Rise.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.map-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: auto;
+}
+.map-modal {
+  position: relative;
+  background: #222;
+  border-radius: 0;
+  width: 90vw;
+  max-width: 1600px;
+  height: 90vh;
+  max-height: 900px;
+  box-shadow: 0 0 24px 4px #ff003c55, 0 4px 16px rgba(0,0,0,0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  filter: brightness(1.1) saturate(1.15);
+}
+
+.map-modal-left {
+  position: relative;
+  flex: 3 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #181818;
+  overflow: hidden;
+}
+.map-modal-right {
+  flex: 2 1 0%;
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+  min-width: 220px;
+  max-width: 350px;
+  border-left: 2px solid #ff003c44;
+  box-shadow: -8px 0 32px 0 #ff003c11 inset;
+}
+.biome-info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.1em;
+  font-family: 'Dune', 'Orbitron', sans-serif;
+  text-align: left;
+  width: 100%;
+  font-weight: 600;
+  color: #ff003c;
+  background: none;
+}
+.biome-thumb {
+  width: 120px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1.2rem;
+  border: 3px solid #ff003c;
+  box-shadow: none;
+}
+.biome-info p {
+  font-size: 1rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+}
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* position: absolute removed so image is visible and sets modal height */
+  filter: brightness(1.1) saturate(1.15) drop-shadow(0 0 12px #ff003c44);
+}
+.map-marker {
+  position: absolute;
+  z-index: 2;
+  background: #111;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: background 0.2s, box-shadow 0.2s;
+  padding: 0;
+}
+.map-marker:hover {
+  background: #222;
+  box-shadow: 0 4px 16px #ff003c33;
+}
+.map-marker-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
