@@ -1,0 +1,22 @@
+.teleport-btn {
+  margin-top: 1.5em;
+  padding: 0.55em 2.2em;
+  border: 2px solid #ff003c;
+  background: transparent;
+  color: #ff003c;
+  font-family: 'Syne Mono', monospace;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border-radius: 0.4em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.teleport-btn:hover {
+  background: #ff003c;
+  color: #fff;
+}
