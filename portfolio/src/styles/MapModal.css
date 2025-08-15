@@ -1,3 +1,45 @@
+/* Center the Location Details title */
+.biome-info h3 {
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.2rem;
+}
+/* Center the location title */
+.location-title {
+  min-height: 2.5em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  font-size: 1.4rem;
+}
+/* Tooltip for map marker */
+.map-marker-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: 200%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.92);
+  color: #ff003c;
+  font-family: 'Syne Mono', monospace;
+  font-size: 1.02rem;
+  padding: 0.38em 1.1em;
+  border-radius: 0.5em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s cubic-bezier(0.4,0,0.2,1), transform 0.18s cubic-bezier(0.4,0,0.2,1);
+  z-index: 20;
+  box-shadow: 0 2px 16px 0 #000a;
+}
+.map-marker-container:hover .map-marker-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-32px) scale(1.04);
+  pointer-events: auto;
+}
 /* Teleport button hover effect */
 .teleport-btn:hover {
   background: #ff003c;
@@ -30,45 +72,38 @@
   overflow-wrap: normal;
   white-space: normal;
 }
-.location-title {
-  font-size: 1.1rem;
-  margin-bottom: 1.1rem;
-  letter-spacing: 0.1em;
-  font-family: 'Dune', 'Orbitron', sans-serif;
-  text-align: left;
-  width: 100%;
-  font-weight: 600;
-  color: #ff003c !important;
-  background: none !important;
-  box-shadow: none !important;
-}
+
+/* Center the divider */
 .biome-divider {
   border: none;
   height: 2px;
   width: 300px; /* or your preferred width */
   max-width: 100%;
-  margin: 0.15em 0 1em 0;
-  margin-left: 0;
-  margin-right: auto;
+  margin: 0.15em auto 1em auto;
   background: linear-gradient(90deg, #ff003c 0%, #ff4e7a 60%, #ff003c 100%);
   box-shadow: 0 0 2px 0.5px #ff003c88;
   display: block;
 }
 /* DecodeText styles */
- .unit-title {
-  text-align: left;
+/* Center the unit title and move it a little down */
+.unit-title {
+  text-align: center;
   font-family: 'Dune', 'Orbitron', sans-serif;
   color: #111;
   background: #ff003c;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  margin-top: 1.2rem;
   margin-bottom: 0.7rem;
   letter-spacing: 0.15em;
   font-weight: bold;
   user-select: none;
   padding: 0.15em 0.5em;
-  display: inline-block;
+  display: block;
   border-radius: 0.3em;
   box-shadow: 0 0 6px 1px #ff003c55;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 .decode-letter {
   display: inline;
@@ -144,6 +179,7 @@
   color: #ff003c;
   background: none;
 }
+/* Center the biome image */
 .biome-thumb {
   width: 300px;
   height: 168.75px; /* 16:9 ratio for 300px width */
@@ -152,6 +188,9 @@
   margin-bottom: 1.2rem;
   border: 3px solid #ff003c;
   box-shadow: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .biome-info p {
   font-size: 1rem;

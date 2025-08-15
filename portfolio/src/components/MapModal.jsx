@@ -170,26 +170,32 @@ const MapModal = ({ open, onClose, onTeleport }) => {
         <div className="map-modal-left">
           <img src="/images/world.png" alt="World Map" className="map-image" />
           {biomes.map(biome => (
-            <button
+            <div
               key={biome.id}
-              className="map-marker map-marker-icon"
-              style={{ left: `${biome.x}%`, top: `${biome.y}%` }}
-              onClick={() => setSelectedBiome(biome.id)}
-              aria-label={biome.label}
+              className="map-marker-container"
+              style={{ position: 'absolute', left: `${biome.x}%`, top: `${biome.y}%` }}
             >
-              <img src="/images/map_icon.png" alt="Map Marker" className="map-marker-img" />
-            </button>
+              <div className="map-marker-tooltip">{biome.locationName}</div>
+              <button
+                className="map-marker map-marker-icon"
+                onClick={() => setSelectedBiome(biome.id)}
+                aria-label={biome.label}
+              >
+                <img src="/images/map_icon.png" alt="Map Marker" className="map-marker-img" />
+              </button>
+            </div>
           ))}
         </div>
         <div className="map-modal-right">
           <div className="biome-info">
-            <div className="unit-title">Unit-672</div>
+            <div className="unit-title">Earth-355</div>
             {/* Use either TypewriterText or DecodeText below as needed: */}
             <h2 className="location-title">
               <TypewriterText text={locationName} trigger={selectedBiome} />
             </h2>
             <hr className="biome-divider" />
             <img src="/images/black_damascus_topography.jpg" alt="Biome" className="biome-thumb" />
+            <hr className="biome-divider" />
             <h3 style={{ color: '#ff003c', margin: '1.2rem 0 0.5rem 0', fontFamily: 'Dune, Orbitron, sans-serif', fontWeight: 700, letterSpacing: '0.08em' }}>Location Details</h3>
             <p style={{ minHeight: '2.5em', paddingTop: '0.5em' }}>
               <DecodeText text={detailsText} revealed={decodeReveal} className="decode-lorem" />
