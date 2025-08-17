@@ -4,6 +4,8 @@
   max-height: 50%;
   object-fit: contain;
   margin-bottom: 0.4rem;
+  @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
   border-radius: 0;
   box-shadow: none;
 }
@@ -230,7 +232,6 @@
   font-weight: normal;
   font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 
 /* Arctic tundra biome gradient background */
 .biome-section.tundra {
