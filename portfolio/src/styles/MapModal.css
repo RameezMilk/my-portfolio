@@ -13,7 +13,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 2.2rem;
-  font-size: 0.98rem;
+  font-size: 0.9rem;
 }
 /* Center the location title */
 .location-title {
@@ -23,7 +23,7 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  font-size: 0.98rem !important;
+  font-size: 0.9rem !important;
 }
 /* Tooltip for map marker */
 .map-marker-tooltip {
@@ -100,7 +100,7 @@
   font-family: 'Dune', 'Orbitron', sans-serif;
   color: #111;
   background: #ff003c;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-top: 1.2rem;
   margin-bottom: -1.1rem;
   letter-spacing: 0.15em;
