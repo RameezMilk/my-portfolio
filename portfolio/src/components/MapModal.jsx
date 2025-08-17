@@ -189,7 +189,8 @@ const MapModal = ({ open, onClose, onTeleport }) => {
           ))}
         </div>
         <div className="map-modal-right">
-          <div className="biome-info">
+          <div className="biome-info-panel">
+            <div className="biome-info">
             <div className="unit-title">Earth-355</div>
             {/* Use either TypewriterText or DecodeText below as needed: */}
             <h2 className="location-title">
@@ -240,6 +241,7 @@ const MapModal = ({ open, onClose, onTeleport }) => {
                 navigate(route);
               }}
             />
+            </div>
           </div>
         </div>
         <button className="close-btn" onClick={() => { setSelectedBiome(null); onClose(); }}>×</button>

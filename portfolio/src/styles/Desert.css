@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
 
 .desert-role-container.fullstack-narrow {
-			min-width: 600px;
-			max-width: 1000px;
+			min-width: 900px;
+			max-width: 1150px;
 }
 
 
@@ -21,34 +21,29 @@ html, body {
 	border-radius: 22px;
 	box-shadow: 0 4px 32px #0002;
 	padding: 2.2rem 2.1rem 1.7rem 2.1rem;
-	margin: 0 0.5rem;
+	margin: 0 0.5rem 2.5rem 0.5rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-			   min-width: 320px;
-			   max-width: 520px;
-			margin-bottom: 2.5rem;
 }
 
 .desert-role-title {
 	font-family: 'Slackey', cursive, Arial, sans-serif;
 	font-size: 1.3rem;
-	color: #fff;
+	color: #111;
 	letter-spacing: 0.18em;
 	text-align: center;
 	margin-bottom: 1.1rem;
-	text-shadow: 0 2px 16px #000a;
 	text-transform: uppercase;
 }
 
 .desert-role-desc {
 	font-family: 'Montserrat', Arial, sans-serif;
 	font-size: 1.13rem;
-	color: #fff;
+	color: #111;
 	text-align: center;
 	line-height: 1.7;
 	width: 100%;
-	text-shadow: 0 1px 8px #0006;
 }
 
 /* Two-column layout for center content */
@@ -67,8 +62,10 @@ html, body {
 	flex-direction: column;
 	align-items: center;
 	flex: 1 1 0;
-	min-width: 0;
-	max-width: none;
+	min-width: 900px;
+	max-width: 1600px;
+	width: 100%;
+	background: #fff8;
 }
 
 /* Centered content in the middle of the desert page */

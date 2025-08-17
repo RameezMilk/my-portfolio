@@ -8,9 +8,9 @@ import MapModal from "../components/MapModal";
 const TundraPage = () => {
        const [mapOpen, setMapOpen] = useState(false);
 
-	const [cardTitle, setCardTitle] = useState("Card Title");
-	const [cardDesc, setCardDesc] = useState("This is a description for the card. Add your project or content details here.");
-	const [cardImg, setCardImg] = useState("/images/world.png");
+	const [cardTitle, setCardTitle] = useState("Macromancer");
+	const [cardDesc, setCardDesc] = useState("Built a React + Vite frontend and Node.js + Express backend to process food images via OpenAI’s GPT-4o-mini API for macro tracking. Integrated personalized BMR-based nutrition recommendations using user biometrics.");
+	const [cardImg, setCardImg] = useState("/images/Macromancer.png");
 
 
        // Handler for all tundra-line-btn buttons
@@ -18,14 +18,14 @@ const TundraPage = () => {
 	       const btnText = e.target.textContent;
 	       setCardTitle(btnText);
 	       if (btnText === "Macromancer") {
-		       setCardDesc("Contributed to Expertiza, an open-source Ruby on Rails peer review platform, by refactoring model hierarchies and implementing RESTful APIs with full RSpec test coverage. Improved cohesion, reliability, and modularity while adhering to SOLID design principles. Collaborated with maintainers to ensure changes aligned with academic and project needs.");
-		       setCardImg("/images/Expertiza.png");
+               setCardDesc("Built a React + Vite frontend and Node.js + Express backend to process food images via OpenAI’s GPT-4o-mini API for macro tracking. Integrated personalized BMR-based nutrition recommendations using user biometrics.");
+			   setCardImg("/images/Macromancer.png");
 	       } else if (btnText === "Portfolio") {
-		       setCardDesc("Built a React + Vite frontend and Node.js + Express backend to process food images via OpenAI’s GPT-4o-mini API for macro tracking. Integrated personalized BMR-based nutrition recommendations using user biometrics.");
-		       setCardImg("/images/world.png");
+			   setCardDesc("Designed and deployed a personal portfolio with a unique AI-dystopian theme. Showcased custom UI/UX design and advanced visual effects for a standout presentation. Demonstrates strong frontend development and creative design skills.");
+			   setCardImg("/images/world.png");
 	       } else if (btnText === "Expertiza") {
-		       setCardDesc("Designed and deployed a personal portfolio with a unique AI-dystopian theme. Showcased custom UI/UX design and advanced visual effects for a standout presentation. Demonstrates strong frontend development and creative design skills.");
-		       setCardImg("/images/Macromancer.png");
+			   setCardDesc("Contributed to Expertiza, an open-source Ruby on Rails peer review platform, by refactoring model hierarchies and implementing RESTful APIs with full RSpec test coverage. Improved cohesion and modularity while adhering to SOLID design principles. Collaborated with maintainers to ensure changes aligned with academic and project needs.");
+			   setCardImg("/images/Expertiza.png");
 	       }
        };
 
