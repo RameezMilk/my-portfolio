@@ -78,7 +78,7 @@ const biomes = [
     x: 40,
     y: 27,
     locationName: "Vulcan Landing",
-    details: "A bustling port where travelers from all over the world arrive and depart. Known for its vibrant markets and advanced docking technology."
+    details: "Once a bustling port, now a desolate volcanic expanse"
   },
   {
     id: "tropical",
@@ -86,7 +86,7 @@ const biomes = [
     x: 35,
     y: 40,
     locationName: "Overgrove Jungle",
-    details: "A lush, dense jungle teeming with exotic flora and fauna. The air is thick with humidity and the sounds of hidden wildlife."
+    details: "A lush, dense jungle teeming with exotic flora and fauna."
   },
   {
     id: "desert",
@@ -94,7 +94,7 @@ const biomes = [
     x: 35,
     y: 60,
     locationName: "Scorrah Dessert",
-    details: "An endless expanse of golden sands and ancient ruins. The sun is relentless, but hidden oases offer rare respite."
+    details: "An endless expanse of golden sands and ancient ruins."
   },
   {
     id: "tundra",
@@ -102,7 +102,7 @@ const biomes = [
     x: 58,
     y: 25,
     locationName: "Olvrek Tundra",
-    details: "A frozen wilderness of snow and ice, where only the hardiest creatures survive. The aurora lights the night sky."
+    details: "A frozen wilderness where blizzards sweep across snow and ice."
   },
   {
     id: "ruins",
@@ -110,7 +110,7 @@ const biomes = [
     x: 63,
     y: 44,
     locationName: "City of Ashkara",
-    details: "Once a thriving metropolis, now a haunting landscape of crumbling towers and lost technology."
+    details: "Once a thriving metropolis, now a forgotten memory."
   },
 ];
 
@@ -142,7 +142,7 @@ function TypewriterText({ text, trigger }) {
 const MapModal = ({ open, onClose, onTeleport }) => {
   const navigate = useNavigate();
   const [selectedBiome, setSelectedBiome] = useState(null);
-  const [detailsText, setDetailsText] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod.");
+  const [detailsText, setDetailsText] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
   const [decodeReveal, setDecodeReveal] = useState(false);
   const selectedBiomeObj = selectedBiome
     ? biomes.find(b => b.id === selectedBiome)
@@ -204,27 +204,11 @@ const MapModal = ({ open, onClose, onTeleport }) => {
               <DecodeText text={detailsText} revealed={decodeReveal} className="decode-lorem" />
             </p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '1.1em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Server loading . . . . . . . . . .</span>
+              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Server loading . . . . . .</span>
               <span className="red-loading-circle" />
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.7em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Encrypting Data . . . . . . . . .</span>
-              <span className="red-loading-circle" />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.7em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Fetching Diagnostics . . . . . . .</span>
-              <span className="red-loading-circle" />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.7em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Parsing Neural Grid . . . . . . .</span>
-              <span className="red-loading-circle" />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.7em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Decoding Transmission . . . . . .</span>
-              <span className="red-loading-circle" />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.7em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Configuring Vehicle Transport . .</span>
+              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Fetching Diagnostics . . .</span>
               <span className="red-loading-circle" />
             </div>
             <TeleportButton
