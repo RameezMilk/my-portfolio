@@ -19,6 +19,7 @@ import TeleportButton from "./TeleportButton";
               Teleport
             </button>
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // DecodeText component for infinite decode effect
 const decodeLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 function DecodeText({ text, revealed, className }) {
@@ -139,6 +140,7 @@ function TypewriterText({ text, trigger }) {
 }
 
 const MapModal = ({ open, onClose, onTeleport }) => {
+  const navigate = useNavigate();
   const [selectedBiome, setSelectedBiome] = useState(null);
   const [detailsText, setDetailsText] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod.");
   const [decodeReveal, setDecodeReveal] = useState(false);
@@ -177,7 +179,7 @@ const MapModal = ({ open, onClose, onTeleport }) => {
             >
               <div className="map-marker-tooltip">{biome.locationName}</div>
               <button
-                className="map-marker map-marker-icon"
+                className={`map-marker map-marker-icon${selectedBiome === biome.id ? " selected" : ""}`}
                 onClick={() => setSelectedBiome(biome.id)}
                 aria-label={biome.label}
               >
@@ -224,7 +226,20 @@ const MapModal = ({ open, onClose, onTeleport }) => {
               <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Configuring Vehicle Transport . .</span>
               <span className="red-loading-circle" />
             </div>
-            <TeleportButton onClick={() => {/* Add teleport logic here if needed */}} />
+            <TeleportButton
+              onClick={() => {
+                if (!selectedBiome) return;
+                let route = "/";
+                if (selectedBiome === "landing") route = "/cutscene/vulcan-landing";
+                else if (selectedBiome === "tropical") route = "/cutscene/overgrove-jungle";
+                else if (selectedBiome === "desert") route = "/cutscene/scorrah-desert";
+                else if (selectedBiome === "tundra") route = "/cutscene/olvrek-tundra";
+                else if (selectedBiome === "ruins") route = "/cutscene/ashkara";
+                setSelectedBiome(null);
+                onClose();
+                navigate(route);
+              }}
+            />
           </div>
         </div>
         <button className="close-btn" onClick={() => { setSelectedBiome(null); onClose(); }}>×</button>

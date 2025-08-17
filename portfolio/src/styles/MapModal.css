@@ -221,6 +221,44 @@
   transition: background 0.2s, box-shadow 0.2s;
   padding: 0;
 }
+
+.map-marker.selected {
+  animation: map-marker-pulse-strong 0.85s infinite cubic-bezier(0.4,0,0.2,1) alternate;
+  border: 3px solid #ff003c;
+}
+
+@keyframes map-marker-pulse-strong {
+  0% {
+    box-shadow: 0 0 12px 4px #ff003c88, 0 2px 8px #ff003c44;
+    background: #111;
+    transform: translate(-50%, -50%) scale(1.0);
+  }
+  60% {
+    box-shadow: 0 0 48px 18px #ff003cff, 0 2px 16px #ff003c99;
+    background: #2a000c;
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+  100% {
+    box-shadow: 0 0 12px 4px #ff003c88, 0 2px 8px #ff003c44;
+    background: #111;
+    transform: translate(-50%, -50%) scale(1.0);
+  }
+}
+
+@keyframes map-marker-pulse {
+  0% {
+    box-shadow: 0 0 8px 2px #ff003c55, 0 2px 8px rgba(0,0,0,0.25);
+    background: #111;
+  }
+  60% {
+    box-shadow: 0 0 24px 8px #ff003c99, 0 2px 8px rgba(0,0,0,0.25);
+    background: #1a0008;
+  }
+  100% {
+    box-shadow: 0 0 8px 2px #ff003c55, 0 2px 8px rgba(0,0,0,0.25);
+    background: #111;
+  }
+}
 .map-marker:hover {
   background: #222;
   box-shadow: 0 4px 16px #ff003c33;

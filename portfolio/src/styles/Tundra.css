@@ -1,0 +1,289 @@
+/* Restore tundra card image styling */
+.tundra-card-image {
+  width: 100%;
+  max-height: 50%;
+  object-fit: contain;
+  margin-bottom: 0.4rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+.tundra-mobile-btn-row {
+  display: none;
+}
+@media (max-width: 700px), (max-aspect-ratio: 4/5) {
+  .line-project-1,
+  .line-project-2,
+  .line-project-3 {
+    display: none !important;
+  }
+  .tundra-mobile-btn-row {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .tundra-feature-group {
+    width: 95vw;
+    min-width: 0;
+    height: auto;
+    left: 50%;
+    top: 30vw;
+    transform: translate(-50%, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .tundra-iceberg {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 90vw !important;
+    max-width: 400px;
+    height: auto !important;
+    margin: 0 auto 1.2rem auto;
+    display: block;
+  }
+  .tundra-line-btn-1,
+  .tundra-line-btn-2,
+  .tundra-line-btn-3 {
+    position: static !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 120px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .line-project-1,
+  .line-project-2,
+  .line-project-3 {
+    display: none !important;
+  }
+  .tundra-feature-group {
+    width: 95vw;
+    min-width: 0;
+    height: auto;
+    left: 50%;
+    top: 30vw;
+    transform: translate(-50%, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .tundra-iceberg {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 90vw !important;
+    max-width: 400px;
+    height: auto !important;
+    margin: 0 auto 1.2rem auto;
+    display: block;
+  }
+  .tundra-mobile-btn-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .tundra-line-btn-1,
+  .tundra-line-btn-2,
+  .tundra-line-btn-3 {
+    position: static !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 120px;
+    font-size: 1rem;
+  }
+}
+.tundra-line-btn-1 {
+  /* Example: adjust position for button 1 */
+  position: relative;
+  left: 158px;
+  top: 0px;
+}
+.tundra-line-btn-2 {
+  /* Example: adjust position for button 2 */
+  position: relative;
+  left: 127px;
+  top: 0px;
+}
+.tundra-line-btn-3 {
+  /* Example: adjust position for button 3 */
+  position: relative;
+  left: 122px;
+  top: 0px;
+}
+.line-project-1, .line-project-2, .line-project-3 {
+  position: absolute;
+  border: none;
+  border-top: 5px dashed #00eaff; /* Match Projects text color */
+  width: 180px;
+  height: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.tundra-line-btn {
+  margin-left: 16px;
+  padding: 0.35em 1.2em;
+  border: 2px solid #00eaff;
+  background: transparent;
+  color: #00eaff;
+  font-family: 'Strong_Texline', Arial, sans-serif;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  top: 2px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.tundra-line-btn:hover {
+  background: #00eaff22;
+  color: #fff;
+}
+ .tundra-card {
+  position: absolute;
+  left: 6vw;
+  top: 15vw;
+  right: auto;
+  bottom: auto;
+  transform: translateX(0);
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 4px 32px #0002;
+  aspect-ratio: 5 / 6;
+  width: 350px;
+  left: 20vw;
+  min-width: 200px;
+  padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+ .tundra-card-title {
+  font-family: 'Julius Sans One', Arial, sans-serif;
+  font-size: 1.4rem;
+  color: #000;
+  margin-top: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+ .tundra-card-desc {
+  font-family: 'Hind Madurai', Arial, sans-serif;
+  font-size: 0.97rem;
+  color: #000;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ .tundra-feature-group {
+  position: absolute;
+  right: 15vw;
+  top: 50%;
+  left: auto;
+  width: 700px;
+  height: 500px;
+  transform: translateY(-50%);
+}
+.tundra-iceberg {
+  filter: brightness(1.25) saturate(1.1) hue-rotate(190deg);
+  /* Add a blue glow for a lighter blue effect */
+  filter: brightness(1.25) saturate(1.1) drop-shadow(0 0 32px #b3e0faee);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  max-width: 48vw;
+  height: auto;
+  z-index: 2;
+  object-fit: contain;
+  pointer-events: none;
+}
+@font-face {
+  font-family: 'Strong_Texline';
+  src: url('/fonts/Strong_Texline.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+/* Arctic tundra biome gradient background */
+.biome-section.tundra {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #e6faff 0%, #7fd6ff 25%, #0099ff 50%, #005fa3 75%, #001f4d 100%);
+  background-attachment: fixed;
+.line-project-1 {
+  top: 120px;
+  left: 465px;
+  transform: none;
+  width: 150px;
+}
+.line-project-2 {
+  top: 220px;
+  left: 523px;
+  transform: none;
+  width: 100px;
+}
+.line-project-3 {
+  top: 320px;
+  left: 480px;
+  transform: none;
+  width: 180px;
+}
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Example container for tundra content */
+.tundra-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  color: #222;
+}
+
+ .tundra-title {
+  font-family: 'Strong_Texline', Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 7rem;
+  position: absolute;
+  left: 310px;
+  top: 85px;
+  margin: 0;
+  text-align: left;
+  text-shadow: 0 2px 32px #000a;
+  width: auto;
+  display: block;
+}

@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+.desert-role-container.fullstack-narrow {
+			min-width: 600px;
+			max-width: 1000px;
+}
+
+
+html, body {
+	overflow: hidden;
+	height: 100%;
+}
+
+/* Make the first role container (Full-Stack Software Engineer) wider */
+
+/* Role containers for each title/description pair */
+.desert-role-container {
+	background: rgba(255,255,255,0.07);
+	border-radius: 22px;
+	box-shadow: 0 4px 32px #0002;
+	padding: 2.2rem 2.1rem 1.7rem 2.1rem;
+	margin: 0 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+			   min-width: 320px;
+			   max-width: 520px;
+			margin-bottom: 2.5rem;
+}
+
+.desert-role-title {
+	font-family: 'Slackey', cursive, Arial, sans-serif;
+	font-size: 1.3rem;
+	color: #fff;
+	letter-spacing: 0.18em;
+	text-align: center;
+	margin-bottom: 1.1rem;
+	text-shadow: 0 2px 16px #000a;
+	text-transform: uppercase;
+}
+
+.desert-role-desc {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: 1.13rem;
+	color: #fff;
+	text-align: center;
+	line-height: 1.7;
+	width: 100%;
+	text-shadow: 0 1px 8px #0006;
+}
+
+/* Two-column layout for center content */
+.desert-center-columns {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2.5rem;
+			   width: 100%;
+			   max-width: none;
+}
+
+.desert-center-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1 1 0;
+	min-width: 0;
+	max-width: none;
+}
+
+/* Centered content in the middle of the desert page */
+.desert-center-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		top: 65%;
+		transform: translate(-50%, -55%);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			z-index: 10;
+			   width: 100%;
+			   max-width: none;
+			   padding: 0 2rem;
+}
+
+.desert-center-title {
+	font-family: 'Knewave', cursive, Arial, sans-serif;
+	font-size: 2.8rem;
+	color: #fff;
+	letter-spacing: 0.18em;
+	text-align: center;
+	margin-bottom: 1.2rem;
+	text-shadow: 0 2px 16px #000a;
+}
+
+.desert-center-desc {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: 1.25rem;
+	color: #fffbe8;
+	text-align: center;
+	line-height: 1.7;
+	max-width: 600px;
+	text-shadow: 0 1px 8px #0006;
+}
+
+
+/* Desert biome gradient background */
+.biome-section.desert {
+		min-height: 100vh;
+		height: 100vh;
+		overflow: hidden;
+	width: 100vw;
+	background: linear-gradient(135deg, #f7e9b0 0%, #f5c16c 40%, #e7a14b 70%, #c97d3d 100%);
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow-x: hidden;
+}
+/* Centered top title for Education/Experience */
+.desert-top-title {
+	position: fixed;
+		top: 48px;
+	left: 0;
+	width: 100vw;
+	text-align: center;
+			font-family: 'Knewave', cursive, Arial, sans-serif;
+				font-size: 6rem;
+			color: #fff;
+			letter-spacing: 0.18em;
+			text-align: center;
+			margin-bottom: 1.1rem;
+			text-shadow: 0 2px 16px #000a;
+			text-transform: uppercase;
+			z-index: 40;
+			background: none;
+			margin: 0;
+			padding: 0.7rem 0 0.3rem 0;
+			pointer-events: none;
+			user-select: none;
+}
+
+.desert-sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+			width: 170px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+		z-index: 50;
+	background: transparent;
+	gap: 32px;
+}
+
+.sidebar-rotated-text {
+						font-family: 'Londrina Outline', Arial, sans-serif !important;
+				font-size: 3.6rem;
+				color: #111;
+				writing-mode: vertical-rl;
+				transform: rotate(-180deg);
+				letter-spacing: 0.12em;
+				margin: 0 0 0 56px;
+				text-shadow: 0 2px 12px #c97d3d33;
+				user-select: none;
+				font-weight: 400;
+				line-height: 1.1;
+				background: none;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				padding: 0;
+				transition: color 0.2s;
+				position: relative;
+				box-shadow: none;
+			}
+
+			.sidebar-rotated-text:hover {
+				color: #e7a14b;
+			}
+
+			.sidebar-rotated-text.is-active {
+				color: #111;
+					border: 3px solid #111;
+					border-radius: 18px;
+					background: #fff8;
+					padding: 0.5em 0.3em;
+			}

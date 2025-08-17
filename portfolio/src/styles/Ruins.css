@@ -1,0 +1,388 @@
+/* Centered Skills title above debug container */
+.skills-title-above-container {
+  position: absolute;
+  left: 68%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Orbitron', 'Syne Mono', 'Montserrat', 'Arial Black', Arial, sans-serif;
+  text-shadow: 0 2px 12px #000a, 0 1px 0 #fff4;
+  margin: 0;
+  pointer-events: none;
+}
+.debug-green-container {
+  position: absolute;
+  left: 470px;
+  top: 20%;
+  width: 968px;
+  height: 180px;
+  border: 2px solid #00ff00;
+  box-sizing: border-box;
+  background: rgba(0, 255, 0, 0.03);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+
+.ruins-chips-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 32px;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+  min-height: 120px;
+  position: relative;
+}
+
+.chip-item {
+  background: linear-gradient(90deg, #222 60%, #333 100%);
+  color: #fff;
+  border-radius: 22px;
+  padding: 10px 28px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 12px 0 rgba(0,255,0,0.08);
+  border: 1.5px solid #00ff00;
+  margin: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+  animation: chip-pop-in 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes chip-pop-in {
+  0% { transform: scale(0.7) rotate(-8deg); opacity: 0; }
+  60% { transform: scale(1.15) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+}
+.skills-header {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0 0.25rem 0;
+  background: none;
+  z-index: 20;
+  position: fixed;
+  top: 18px;
+  left: 0;
+}
+.skills-header .sidebar-title {
+  margin-bottom: 0;
+  margin-right: 1.1rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+.skills-header .sidebar-skills-list {
+  flex-direction: row;
+  gap: 0.25rem;
+  width: auto;
+}
+.skills-header .sidebar-skill-btn {
+  width: auto;
+  min-width: 90px;
+  font-size: 0.98rem;
+  padding: 0.32rem 0.7rem;
+  text-align: center;
+}
+.skills-header .sidebar-divider {
+  width: 1.5px;
+  height: 18px;
+  margin: 0 0.18rem;
+  background: linear-gradient(180deg, #222 0%, #a259ff 100%);
+  border-radius: 1px;
+  opacity: 0.45;
+}
+
+.ruins-city-img {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+  max-height: 38vh;
+  z-index: 8;
+  opacity: 0.92;
+  pointer-events: none;
+  filter: drop-shadow(0 0 32px #a259ff55) brightness(0.92) saturate(1.2);
+  object-fit: cover;
+}
+
+.ruins-chips-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 160px;
+  max-width: 220px;
+  margin-left: 2.5rem;
+  gap: 1.2rem;
+  z-index: 12;
+  align-self: flex-start;
+  padding-top: 0.5rem;
+}
+
+.chip-item {
+  background: #18182aee;
+  color: #b7ff9f;
+  font-family: 'Orbitron', 'Syne Mono', sans-serif;
+  font-size: 1.01rem;
+  font-weight: 600;
+  border-radius: 18px;
+  padding: 0.55rem 1.2rem;
+  box-shadow: 0 0 8px 0 #b7ff9f22;
+  text-align: center;
+  user-select: none;
+  margin: 0 auto;
+  min-width: 90px;
+  max-width: 180px;
+  transition: transform 0.38s cubic-bezier(.6,-0.28,.74,.05), opacity 0.28s;
+  opacity: 1;
+}
+.chip-slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+.chip-slide-out {
+  transform: translateX(80px);
+  opacity: 0;
+}
+
+.dropdown-title {
+  color: #fff;
+  font-family: 'Orbitron', 'Syne Mono', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  margin-bottom: 0.7rem;
+  text-shadow: 0 2px 8px #a259ff44;
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dropdown-item {
+  color: #b7ff9f;
+  font-family: 'Orbitron', 'Syne Mono', sans-serif;
+  font-size: 1.01rem;
+  font-weight: 600;
+  background: #23243a;
+  border-radius: 7px;
+  padding: 0.55rem 0.7rem;
+  box-shadow: 0 0 8px 0 #b7ff9f22;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  user-select: none;
+}
+.dropdown-item:hover {
+  background: #2e2f4a;
+  color: #fff;
+}
+.radar-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #b7ff9f;
+  box-shadow: 0 0 16px 6px #b7ff9f99, 0 0 32px 12px #b7ff9f44;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  animation: radar-dot-glow 1.2s alternate infinite;
+}
+
+@keyframes radar-dot-glow {
+  0% { opacity: 0.85; box-shadow: 0 0 12px 2px #b7ff9f99, 0 0 24px 8px #b7ff9f33; }
+  100% { opacity: 1; box-shadow: 0 0 24px 8px #b7ff9fcc, 0 0 48px 16px #b7ff9f55; }
+}
+.ruins-sidebar {
+  width: 320px;
+  min-width: 260px;
+  max-width: 380px;
+  background: #0a0a13;
+  border-radius: 18px;
+  box-shadow:
+    0 0 32px 0 #000b,
+    0 2px 16px 0 #a259ff22,
+    0 0 32px 8px #a259ff66;
+  padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+  margin-left: 4.5rem;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 240px;
+  max-height: 240px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.sidebar-title {
+  color: #fff;
+  font-family: 'Orbitron', 'Syne Mono', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  margin-bottom: 2.2rem;
+  text-transform: uppercase;
+  text-shadow: 0 2px 16px #000, 0 1px 2px #222;
+}
+
+.sidebar-skills-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.sidebar-skill-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #b7ff9f;
+  font-family: 'Orbitron', 'Syne Mono', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.7rem 0.2rem;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.sidebar-skill-btn:hover, .sidebar-skill-btn.is-active {
+  background: #18182a;
+  color: #fff;
+}
+
+.sidebar-divider {
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(90deg, #222 0%, #a259ff 100%);
+  margin: 0.1rem 0 0.1rem 0;
+  border-radius: 1px;
+  opacity: 0.55;
+}
+.radar-spin-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+}
+
+.ruins-radar-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  filter:
+    drop-shadow(0 0 32px #a259ff)
+    drop-shadow(0 0 64px #a259ffcc)
+    saturate(2.5)
+    hue-rotate(-20deg);
+  opacity: 0.98;
+  user-select: none;
+  mix-blend-mode: screen;
+}
+
+.radar-sweep {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 190px;
+  background: linear-gradient(180deg, #fff0 0%, #a259ff 80%, #fff0 100%);
+  box-shadow: 0 0 24px 6px #a259ff99;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%);
+  opacity: 0.97;
+  animation: radar-spin 3.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes radar-spin {
+  0% { transform: translate(-50%, -100%) rotate(0deg); }
+  100% { transform: translate(-50%, -100%) rotate(360deg); }
+}
+.ruins-content-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 70vh;
+  position: relative;
+  z-index: 2;
+}
+
+.ruins-radar-center {
+  position: fixed;
+  left: 150px;
+  top: 37%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 400px;
+  height: 400px;
+}
+
+.ruins-main-content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+
+
+.biome-section.ruins {
+  background: linear-gradient(180deg, #23243a 0%, #1a1b2b 60%, #0a0a13 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #e0e6f7;
+  overflow: hidden;
+}
+
+
+
+/* Add more futuristic/dystopian accent styles as needed */
