@@ -1,19 +1,18 @@
 import React, { useRef, useEffect, useState } from "react";
 import Landing from "./Landing";
-import Tropical from "./Tropical";
-import Desert from "./Desert";
-import Tundra from "./Tundra";
-import Ruins from "./Ruins";
+//import Tropical from "./Tropical";
+// import Desert from "./Desert";
+//import Ruins from "./Ruins";
 import { useWorld } from "../context/WorldContext.jsx";
 import StickyMapButton from "./StickyMapButton";
 import MapModal from "./MapModal";
 
 const biomeOrder = [
   { id: "landing", Component: Landing },
-  { id: "tropical", Component: Tropical },
-  { id: "desert", Component: Desert },
-  { id: "tundra", Component: Tundra },
-  { id: "ruins", Component: Ruins },
+  //{ id: "tropical", Component: Tropical },
+  // { id: "desert", Component: Desert },
+  // { id: "tundra", Component: Tundra },
+  //{ id: "ruins", Component: Ruins },
 ];
 
 const World = () => {
