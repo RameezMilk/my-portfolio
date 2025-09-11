@@ -128,10 +128,10 @@
 
 @media (max-width: 700px) {
   .tundra-iceberg-crop {
-  align-items: center;
-  box-sizing: border-box;
-  /* Removed outline */
-}
+    align-items: center;
+    box-sizing: border-box;
+    /* Removed outline */
+  }
 
   display: flex;
   flex-direction: row;
