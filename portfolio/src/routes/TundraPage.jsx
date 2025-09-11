@@ -1,8 +1,10 @@
 import "../styles/Tundra.css";
 import React, { useState } from "react";
 
+
 import StickyMapButton from "../components/StickyMapButton";
 import MapModal from "../components/MapModal";
+import SnowParticles from "../components/SnowParticles";
 
 
 const TundraPage = () => {
@@ -29,40 +31,31 @@ const TundraPage = () => {
 	       }
        };
 
-       return (
-		<>
-			{/* Main Tundra content here */}
+			return (
+				<>
+					<SnowParticles />
 					<section className="biome-section tundra">
-				<div className="tundra-feature-group">
-			       <div className="line-project-1 line-with-btn desktop-only">
-									   <button className="tundra-line-btn tundra-line-btn-1" onClick={handleCardBtnClick}>Macromancer</button>
-			       </div>
-			       <div className="line-project-2 line-with-btn desktop-only">
-									   <button className="tundra-line-btn tundra-line-btn-2" onClick={handleCardBtnClick}>Portfolio</button>
-			       </div>
-			       <div className="line-project-3 line-with-btn desktop-only">
-									   <button className="tundra-line-btn tundra-line-btn-3" onClick={handleCardBtnClick}>Expertiza</button>
-			       </div>
-					{/* Mobile button row, only visible on mobile */}
-			       <div className="tundra-mobile-btn-row">
-									   <button className="tundra-line-btn tundra-line-btn-1" onClick={handleCardBtnClick}>Macromancer</button>
-									   <button className="tundra-line-btn tundra-line-btn-2" onClick={handleCardBtnClick}>Portfolio</button>
-									   <button className="tundra-line-btn tundra-line-btn-3" onClick={handleCardBtnClick}>Expertiza</button>
-			       </div>
-					<img className="tundra-iceberg" src="/images/iceberg.png" alt="Iceberg" />
-				</div>
-						<div className="tundra-content">
+						<div className="tundra-title-row">
 							<h1 className="tundra-title">PROJECTS</h1>
-							<div className="tundra-card">
-													   <div className="tundra-card-title">{cardTitle}</div>
-													   <img className="tundra-card-image" src={cardImg} alt="Card visual" />
-													   <div className="tundra-card-desc">{cardDesc}</div>
+						</div>
+						<div className="tundra-card-flex">
+							<div className="glass-card">
+								<h2 className="card-title">Arctic Glass</h2>
+								<p className="card-subtitle">Frozen crystalline interface</p>
+								<div className="card-content">
+									<p>Experience the pristine beauty of arctic glaciers with this crystalline glass card. Inspired by the ethereal transparency of ancient ice formations.</p>
+								</div>
 							</div>
 						</div>
+						<div className="tundra-btn-vertical-group desktop-btns">
+							<button className="tundra-line-btn tundra-line-btn-1" onClick={handleCardBtnClick}>Macromancer</button>
+							<button className="tundra-line-btn tundra-line-btn-2" onClick={handleCardBtnClick}>Portfolio</button>
+							<button className="tundra-line-btn tundra-line-btn-3" onClick={handleCardBtnClick}>Expertiza</button>
+						</div>
 					</section>
-			<StickyMapButton onClick={() => setMapOpen(true)} />
-			<MapModal open={mapOpen} onClose={() => setMapOpen(false)} />
-		</>
+					<StickyMapButton onClick={() => setMapOpen(true)} />
+					<MapModal open={mapOpen} onClose={() => setMapOpen(false)} />
+				</>
 	);
 };
 
