@@ -1,3 +1,15 @@
+// Utility hook to detect mobile viewport
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
+  React.useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= breakpoint);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [breakpoint]);
+  return isMobile;
+}
 import TeleportButton from "./TeleportButton";
             <button
               style={{
@@ -140,6 +152,7 @@ function TypewriterText({ text, trigger }) {
 }
 
 const MapModal = ({ open, onClose, onTeleport }) => {
+  const isMobile = useIsMobile();
   const navigate = useNavigate();
   const [selectedBiome, setSelectedBiome] = useState(null);
   const [detailsText, setDetailsText] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
@@ -169,8 +182,17 @@ const MapModal = ({ open, onClose, onTeleport }) => {
   return (
     <div className="map-modal-overlay" onClick={() => { setSelectedBiome(null); onClose(); }}>
       <div className="map-modal" onClick={e => e.stopPropagation()}>
+        {isMobile && (
+          <div className="map-modal-header-mobile">
+            <div className="unit-title">Earth-355</div>
+            <hr className="biome-divider" />
+            <h2 className="location-title">
+              <TypewriterText text={locationName} trigger={selectedBiome} />
+            </h2>
+          </div>
+        )}
         <div className="map-modal-left">
-          <img src="/images/world.png" alt="World Map" className="map-image" />
+          <img src="/images/world.png" alt="World Map" className="map-image" loading="lazy" />
           {biomes.map(biome => (
             <div
               key={biome.id}
@@ -191,40 +213,43 @@ const MapModal = ({ open, onClose, onTeleport }) => {
         <div className="map-modal-right">
           <div className="biome-info-panel">
             <div className="biome-info">
-            <div className="unit-title">Earth-355</div>
-            {/* Use either TypewriterText or DecodeText below as needed: */}
-            <h2 className="location-title">
-              <TypewriterText text={locationName} trigger={selectedBiome} />
-            </h2>
-            <hr className="biome-divider" />
-            <img src="/images/black_damascus_topography.jpg" alt="Biome" className="biome-thumb" />
-            <hr className="biome-divider" />
-            <h3 style={{ color: '#ff003c', margin: '1.2rem 0 0.5rem 0', fontFamily: 'Dune, Orbitron, sans-serif', fontWeight: 700, letterSpacing: '0.08em' }}>Location Details</h3>
-            <p style={{ minHeight: '2.5em', paddingTop: '0.5em' }}>
-              <DecodeText text={detailsText} revealed={decodeReveal} className="decode-lorem" />
-            </p>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '1.1em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Server loading . . . . . .</span>
-              <span className="red-loading-circle" />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.7em' }}>
-              <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Fetching Diagnostics . . .</span>
-              <span className="red-loading-circle" />
-            </div>
-            <TeleportButton
-              onClick={() => {
-                if (!selectedBiome) return;
-                let route = "/";
-                if (selectedBiome === "landing") route = "/cutscene/vulcan-landing";
-                else if (selectedBiome === "tropical") route = "/cutscene/overgrove-jungle";
-                else if (selectedBiome === "desert") route = "/cutscene/scorrah-desert";
-                else if (selectedBiome === "tundra") route = "/cutscene/olvrek-tundra";
-                else if (selectedBiome === "ruins") route = "/cutscene/ashkara";
-                setSelectedBiome(null);
-                onClose();
-                navigate(route);
-              }}
-            />
+              {!isMobile && (
+                <>
+                  <div className="unit-title">Earth-355</div>
+                  <h2 className="location-title">
+                    <TypewriterText text={locationName} trigger={selectedBiome} />
+                  </h2>
+                  <hr className="biome-divider" />
+                </>
+              )}
+              <img src="/images/black_damascus_topography.jpg" alt="Biome" className="biome-thumb" loading="lazy" />
+              <hr className="biome-divider" />
+              <h3 style={{ color: '#ff003c', margin: '1.2rem 0 0.5rem 0', fontFamily: 'Dune, Orbitron, sans-serif', fontWeight: 700, letterSpacing: '0.08em' }}>Location Details</h3>
+              <p style={{ minHeight: '2.5em', paddingTop: '0.5em' }}>
+                <DecodeText text={detailsText} revealed={decodeReveal} className="decode-lorem" />
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '1.1em' }}>
+                <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Server loading . . . . . .</span>
+                <span className="red-loading-circle" />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '0.7em' }}>
+                <span style={{ color: '#fff', fontSize: '1rem', fontFamily: 'Instrument Sans, Syne Mono, sans-serif', letterSpacing: '0.04em' }}>Fetching Diagnostics . . .</span>
+                <span className="red-loading-circle" />
+              </div>
+              <TeleportButton
+                onClick={() => {
+                  if (!selectedBiome) return;
+                  let route = "/";
+                  if (selectedBiome === "landing") route = "/cutscene/vulcan-landing";
+                  else if (selectedBiome === "tropical") route = "/cutscene/overgrove-jungle";
+                  else if (selectedBiome === "desert") route = "/cutscene/scorrah-desert";
+                  else if (selectedBiome === "tundra") route = "/cutscene/olvrek-tundra";
+                  else if (selectedBiome === "ruins") route = "/cutscene/ashkara";
+                  setSelectedBiome(null);
+                  onClose();
+                  navigate(route);
+                }}
+              />
             </div>
           </div>
         </div>
