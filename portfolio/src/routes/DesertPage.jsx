@@ -26,53 +26,70 @@ const DesertPage = () => {
 			</div>
 					<section className="biome-section desert">
 						<aside className="desert-sidebar">
-												<button
-													className={"sidebar-rotated-text education" + (selectedSection === "EDUCATION" ? " is-active" : "")}
-													onClick={() => handleSectionClick("EDUCATION")}
-													tabIndex={0}
-												>
-													Education
-												</button>
-												<button
-													className={"sidebar-rotated-text experience" + (selectedSection === "EXPERIENCE" ? " is-active" : "")}
-													onClick={() => handleSectionClick("EXPERIENCE")}
-													tabIndex={0}
-												>
-													Experience
-												</button>
+							<button
+								className={"sidebar-rotated-text education" + (selectedSection === "EDUCATION" ? " is-active" : "")}
+								onClick={() => handleSectionClick("EDUCATION")}
+								tabIndex={0}
+							>
+								Education
+							</button>
+							<button
+								className={"sidebar-rotated-text experience" + (selectedSection === "EXPERIENCE" ? " is-active" : "")}
+								onClick={() => handleSectionClick("EXPERIENCE")}
+								tabIndex={0}
+							>
+								Experience
+							</button>
 						</aside>
-												<div className="desert-center-content desert-center-columns">
-													<div className="desert-center-col desert-role-container fullstack-narrow">
-														<div className="desert-role-title">
-															{selectedSection === "EDUCATION"
-																? "Student @ NC State University"
-																: "Full Stack Software Intern @ Axiom"}
-														</div>
-														<div className="desert-role-desc">
-															{selectedSection === "EDUCATION"
-																		? (
-																				"At North Carolina State University, I am pursuing a Bachelor of Science in Computer Science as part of the Accelerated Bachelor’s/Master’s (ABM) Program, which will allow me to complete my Master’s in one additional year. My academic and career focus is on Applied AI and Software Engineering, where I am developing both theoretical and practical expertise in designing scalable systems. Beyond coursework, I am active in the Competitive Programming Club, where I strengthen my technical skills and collaborate with peers on challenging problem-solving tasks."
-																			) : (
-																				"As a Full-Stack Developer Intern at Axiom Software, I play a key role in building and maintaining the company’s flagship CRM platform, which serves as a dynamic solution for managing client data and business workflows. My work spans the full development stack, where I architect and implement secure, RESTful C# APIs to enable efficient and reliable data transactions, while also designing responsive user interfaces in Angular that improve usability and interactivity for end-users. By leveraging Microsoft’s .NET ecosystem, I ensure backend logic is both scalable and performance-driven, while my use of Azure DevOps allows for agile project tracking, version control, and smooth team-wide deployment."
-																			)}
-														</div>
-													</div>
-													<div className="desert-center-col desert-role-container fullstack-narrow">
-														<div className="desert-role-title">
-															{selectedSection === "EDUCATION"
-															? "Student @ Wake Technical Community College"
-															: "Web Developer @ Bayan Institute"}
-														</div>
-														<div className="desert-role-desc">
-															{selectedSection === "EDUCATION"
-																		? (
-																				"Prior to NC State, I studied at Wake Technical Community College in the Associate in Engineering transfer pathway with a focus on Computer Science. During this time, I built a strong academic foundation in engineering principles and programming, which prepared me for transfer into NC State’s rigorous program. I was a member of the Wake Tech Honors Program and Sigma Kappa Delta (English Honors Society), where I cultivated a balance of technical and communication skills, while maintaining high academic performance in a competitive environment."
-																			) : (
-																				"As a Web Developer for the Bayan International Islamic Institute, I designed and deployed a modern, donation-driven platform that empowers the organization to maximize community engagement and fundraising outcomes. Beyond technical execution, I worked directly with stakeholders to ensure the platform aligned with organizational goals and evolving campaign strategies, ultimately building a digital presence that continues to support ongoing fundraising initiatives and long-term growth."
-																			)}
-														</div>
-													</div>
-												</div>
+						<div className="desert-glass-stack">
+							{selectedSection === "EDUCATION" ? (
+								<>
+									<div className="desert-glass-card-1">
+										<div>
+											<h2 style={{margin: 0, fontSize: '2rem'}}>Student @ NC State University</h2>
+											<ul style={{margin: '1.2em 0 0 1.2em'}}>
+												<li>Bachelor of Science in Computer Science (ABM Program)</li>
+												<li>Focus: Applied AI & Software Engineering</li>
+												<li>Competitive Programming Club member</li>
+											</ul>
+										</div>
+									</div>
+									<div className="desert-glass-card-2">
+										<div>
+											<h2 style={{margin: 0, fontSize: '2rem'}}>Student @ WakeTech College</h2>
+											<ul style={{margin: '1.2em 0 0 1.2em'}}>
+												<li>Associate in Engineering transfer pathway</li>
+												<li>Honors Program & Sigma Kappa Delta member</li>
+												<li>High academic performance</li>
+											</ul>
+										</div>
+									</div>
+								</>
+							) : (
+								<>
+									<div className="desert-glass-card-1">
+										<div>
+											<h2 style={{margin: 0, fontSize: '2rem'}}>Full Stack Intern @ Axiom</h2>
+											<ul style={{margin: '1.2em 0 0 1.2em'}}>
+												<li>Built and maintained flagship CRM platform</li>
+												<li>Developed secure RESTful C# APIs & Angular UIs</li>
+												<li>Used Azure DevOps for agile project tracking</li>
+											</ul>
+										</div>
+									</div>
+									<div className="desert-glass-card-2">
+										<div>
+											<h2 style={{margin: 0, fontSize: '2rem'}}>Web Developer @ Bayan Institute</h2>
+											<ul style={{margin: '1.2em 0 0 1.2em'}}>
+												<li>Designed and deployed donation-driven platform</li>
+												<li>Aligned platform with organizational goals</li>
+												<li>Supported ongoing fundraising initiatives</li>
+											</ul>
+										</div>
+									</div>
+								</>
+							)}
+						</div>
 					</section>
 			<StickyMapButton onClick={() => setMapOpen(true)} />
 			<MapModal open={mapOpen} onClose={() => setMapOpen(false)} />
