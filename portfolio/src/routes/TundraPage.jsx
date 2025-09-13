@@ -8,27 +8,31 @@ import SnowParticles from "../components/SnowParticles";
 
 
 const TundraPage = () => {
-       const [mapOpen, setMapOpen] = useState(false);
+	const [mapOpen, setMapOpen] = useState(false);
 
 	const [cardTitle, setCardTitle] = useState("Macromancer");
-	const [cardDesc, setCardDesc] = useState("Built a React + Vite frontend and Node.js + Express backend to process food images via OpenAI’s GPT-4o-mini API for macro tracking. Integrated personalized BMR-based nutrition recommendations using user biometrics.");
+	const [cardSubtitle, setCardSubtitle] = useState("AI-Powered Calorie Tracker");
+	const [cardDesc, setCardDesc] = useState("Harness the intelligence of AI to decode your meals with seamless precision. Designed with an elegant React interface and powered by GPT-4o-mini, this project blends image recognition and personalized nutrition, offering clarity and balance for every user.");
 	const [cardImg, setCardImg] = useState("/images/Macromancer.png");
 
 
        // Handler for all tundra-line-btn buttons
        const handleCardBtnClick = (e) => {
 	       const btnText = e.target.textContent;
-	       setCardTitle(btnText);
-	       if (btnText === "Macromancer") {
-               setCardDesc("Built a React + Vite frontend and Node.js + Express backend to process food images via OpenAI’s GPT-4o-mini API for macro tracking. Integrated personalized BMR-based nutrition recommendations using user biometrics.");
+		   setCardTitle(btnText);
+		   if (btnText === "Macromancer") {
+			   setCardSubtitle("AI-Powered Calorie Tracker");
+			   setCardDesc("Harness the intelligence of AI to decode your meals with seamless precision. Designed with an elegant React interface and powered by GPT-4o-mini, this project blends image recognition and personalized nutrition, offering clarity and balance for every user.");
 			   setCardImg("/images/Macromancer.png");
-	       } else if (btnText === "Portfolio") {
-			   setCardDesc("Designed and deployed a personal portfolio with a unique AI-dystopian theme. Showcased custom UI/UX design and advanced visual effects for a standout presentation. Demonstrates strong frontend development and creative design skills.");
-			   setCardImg("/images/world.png");
-	       } else if (btnText === "Expertiza") {
-			   setCardDesc("Contributed to Expertiza, an open-source Ruby on Rails peer review platform, by refactoring model hierarchies and implementing RESTful APIs with full RSpec test coverage. Improved cohesion and modularity while adhering to SOLID design principles. Collaborated with maintainers to ensure changes aligned with academic and project needs.");
+		   } else if (btnText === "Expertiza") {
+			   setCardSubtitle("Open Source Github Contribution");
+			   setCardDesc("Experience the refinement of academic peer review through carefully restructured architecture. Rooted in Ruby on Rails and modernized with RESTful APIs, robust tests, and SOLID principles, this project breathes clarity and stability into a legacy system used by students worldwide.");
 			   setCardImg("/images/Expertiza.png");
-	       }
+		   } else if (btnText === "Portfolio") {
+			   setCardSubtitle("Professional Web Presense");
+			   setCardDesc("Step into a curated digital identity with this responsive portfolio, designed to reflect both technical craft and personal aesthetic. Built with modern web frameworks, it embodies elegance, accessibility, and purpose.");
+			   setCardImg("/images/world.png");
+		   }
        };
 
 			return (
@@ -40,14 +44,17 @@ const TundraPage = () => {
 						</div>
 						<div className="tundra-card-flex">
 							<div className="glass-card">
-								<h2 className="card-title">Arctic Glass</h2>
-								<p className="card-subtitle">Frozen crystalline interface</p>
-								<div className="card-content">
-									<p>Experience the pristine beauty of arctic glaciers with this crystalline glass card. Inspired by the ethereal transparency of ancient ice formations.</p>
+								<div className="glass-card-left">
+									<h2 className="card-title">{cardTitle}</h2>
+									<p className="card-subtitle">{cardSubtitle}</p>
+									<div className="card-content">
+										<p>{cardDesc}</p>
+									</div>
 								</div>
+								<img className="card-image" src={cardImg} alt={cardTitle} />
 							</div>
 						</div>
-						<div className="tundra-btn-vertical-group desktop-btns">
+						<div className="bottom-center-row">
 							<button className="tundra-line-btn tundra-line-btn-1" onClick={handleCardBtnClick}>Macromancer</button>
 							<button className="tundra-line-btn tundra-line-btn-2" onClick={handleCardBtnClick}>Portfolio</button>
 							<button className="tundra-line-btn tundra-line-btn-3" onClick={handleCardBtnClick}>Expertiza</button>
