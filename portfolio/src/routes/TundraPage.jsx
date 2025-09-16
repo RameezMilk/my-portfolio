@@ -39,25 +39,27 @@ const TundraPage = () => {
 				<>
 					<SnowParticles />
 					<section className="biome-section tundra">
-						<div className="tundra-title-row">
-							<h1 className="tundra-title">PROJECTS</h1>
-						</div>
-						<div className="tundra-card-flex">
-							<div className="glass-card">
-								<div className="glass-card-left">
-									<h2 className="card-title">{cardTitle}</h2>
-									<p className="card-subtitle">{cardSubtitle}</p>
-									<div className="card-content">
-										<p>{cardDesc}</p>
-									</div>
-								</div>
-								<img className="card-image" src={cardImg} alt={cardTitle} />
+						<div className="tundra-main-flex">
+							<div className="tundra-title-row">
+								<h1 className="tundra-title">PROJECTS</h1>
 							</div>
-						</div>
-						<div className="bottom-center-row">
-							<button className="tundra-line-btn tundra-line-btn-1" onClick={handleCardBtnClick}>Macromancer</button>
-							<button className="tundra-line-btn tundra-line-btn-2" onClick={handleCardBtnClick}>Portfolio</button>
-							<button className="tundra-line-btn tundra-line-btn-3" onClick={handleCardBtnClick}>Expertiza</button>
+							<div className="tundra-card-flex">
+								<div className="glass-card">
+									<div className="glass-card-left">
+										<h2 className="card-title">{cardTitle}</h2>
+										<p className="card-subtitle">{cardSubtitle}</p>
+										<div className="card-content">
+											<p>{cardDesc}</p>
+										</div>
+									</div>
+									<img className="card-image" src={cardImg} alt={cardTitle} />
+								</div>
+							</div>
+							<div className="tundra-btn-vertical-group">
+								<button className="tundra-line-btn tundra-line-btn-1" onClick={handleCardBtnClick}>Macromancer</button>
+								<button className="tundra-line-btn tundra-line-btn-2" onClick={handleCardBtnClick}>Portfolio</button>
+								<button className="tundra-line-btn tundra-line-btn-3" onClick={handleCardBtnClick}>Expertiza</button>
+							</div>
 						</div>
 					</section>
 					<StickyMapButton onClick={() => setMapOpen(true)} />
