@@ -1,3 +1,80 @@
+/* --- Desert Page Navbars --- */
+.desert-navbar {
+	position: fixed;
+	background: #000;
+	z-index: 100;
+}
+
+.desert-navbar-top {
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 110px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1.5px solid #222;
+}
+
+.desert-navbar-bottom {
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: 56px;
+	border-top: 1.5px solid #222;
+}
+
+.desert-navbar-left {
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-right: 1.5px solid #222;
+}
+
+.desert-navbar-right {
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-left: 1.5px solid #222;
+}
+
+.desert-navbar-left button,
+.desert-navbar-right button {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	background: none;
+	border: none;
+	color: #fff8;
+	font-size: 1.1rem;
+	margin: 0;
+	padding: 0.5rem 0;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+.desert-navbar-left button.is-active,
+.desert-navbar-right button.is-active {
+	color: #ffe082;
+	font-weight: bold;
+}
+
+/* Main content area with navbars */
+.desert-content-area {
+		margin: 110px 60px 56px 60px;
+		min-height: calc(100vh - 166px);
+	width: auto;
+	position: relative;
+	z-index: 10;
+}
 /* --- Desert Glass Card Stack --- */
 .desert-glass-stack {
 		display: flex;
@@ -134,30 +211,19 @@
 }
 /* Centered top title for Education/Experience */
 .desert-top-title {
-	position: fixed;
-	top: 48px;
-	left: 0;
-	width: 100vw;
-	text-align: center;
-	font-family: 'Knewave', cursive, Arial, sans-serif;
-	position: fixed;
-	top: 24px;
-	left: 0;
-	width: 100vw;
-	font-family: 'Knewave', cursive, Arial, sans-serif;
-	font-size: 3.2rem;
-	color: #fff;
-	letter-spacing: 0.18em;
-	margin: 0;
-	padding: 0.2rem 0 0.3rem 0;
-	text-align: center;
-	margin-bottom: 1.1rem;
-	text-shadow: 0 2px 16px #000a;
-	text-transform: uppercase;
-	z-index: 40;
-	background: none;
-	pointer-events: none;
-	user-select: none;
+			display: block;
+			font-family: 'Knewave', cursive, Arial, sans-serif;
+			font-size: 3.2rem;
+			color: #fff;
+			letter-spacing: 0.18em;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			text-shadow: 0 2px 16px #000a;
+			text-transform: uppercase;
+			background: none;
+			pointer-events: none;
+			user-select: none;
 }
 
 .desert-sidebar {
