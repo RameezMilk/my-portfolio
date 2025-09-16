@@ -35,43 +35,43 @@ const Landing = () => {
     animateText();
   }, []);
 
-  return (
-    <section className="landing-section">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="background-video"
-      >
-        <source src="/videos/particles.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Cube */}
-      <div className="cube-wrapper">
-        <Cube />
-      </div>
-
-      {/* Foreground Content */}
-      <div className="landing-content">
-        <h1 className="landing-name">
-          {nameText.split("").map((char, index) => (
-            <span
-              key={index}
-              ref={(el) => (spansRef.current[index] = el)}
-              className={`hacker-letter ${char === " " ? "space" : ""}`}
-            >
-              {char}
-            </span>
-          ))}
-        </h1>
-        <p className="landing-subtitle">
-          Visionary software architect & creative systems builder
-        </p>
-      </div>
-    </section>
-  );
+    return (
+      <section className="landing-section">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="background-video"
+        >
+          <source src="/videos/particles.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="landing-main-flex">
+          {/* Cube - now relative to flex container */}
+          <div className="cube-relative-wrapper">
+            <Cube />
+          </div>
+          {/* Foreground Content */}
+          <div className="landing-content">
+            <h1 className="landing-name">
+              {nameText.split("").map((char, index) => (
+                <span
+                  key={index}
+                  ref={(el) => (spansRef.current[index] = el)}
+                  className={`hacker-letter ${char === " " ? "space" : ""}`}
+                >
+                  {char}
+                </span>
+              ))}
+            </h1>
+            <p className="landing-subtitle">
+              Visionary software architect & creative systems builder
+            </p>
+          </div>
+        </div>
+      </section>
+    );
 };
 
 export default Landing;
