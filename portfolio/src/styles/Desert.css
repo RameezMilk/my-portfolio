@@ -1,3 +1,221 @@
+/* Education card title and list */
+.edu-title {
+	color: #fff;
+	font-weight: 800;
+	font-size: 1.15rem;
+	margin-bottom: 1.2em;
+	text-align: center;
+	letter-spacing: 0.01em;
+}
+
+.edu-list {
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	margin: 0;
+	padding-left: 1.2em;
+	text-align: left;
+}
+.edu-list li {
+	margin-bottom: 0.3em;
+}
+/* Education cards row in content section */
+.edu-cards-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: stretch;
+		gap: 2rem;
+		height: 100%;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		box-sizing: border-box;
+}
+
+.edu-card {
+		background: none;
+		box-shadow: none;
+		border: 2px dashed #ffe600;
+			min-width: 160px;
+			min-height: 80px;
+			max-height: 90%;
+			flex: 1 1 0;
+			max-width: 48%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+		.edu-cards-row {
+			flex-direction: column;
+			gap: 1.5rem;
+			max-width: 98vw;
+		}
+			.edu-card {
+				min-width: 90vw;
+				max-width: 98vw;
+				min-height: 60px;
+				max-height: 40vw;
+			}
+}
+/* Content section between hero image and bottom navbar */
+.content-section {
+		width: 100vw;
+		background: #000;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: calc(var(--navbar-height) + (50vh - var(--navbar-height) / 2));
+		bottom: var(--navbar-height);
+		min-height: 0;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+@media (max-width: 700px) {
+	.content-section {
+		top: calc(var(--navbar-height-mobile) + (50vh - var(--navbar-height-mobile) / 2));
+		bottom: var(--navbar-height-mobile);
+	}
+}
+body, #root, .App {
+	height: 100vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+/* Layout for DesertPage to fill vertical space */
+.desert-page-root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100vw;
+}
+.desert-navbar-top,
+.desert-hero-image-section,
+.content-section,
+.desert-navbar-bottom {
+	flex-shrink: 0;
+}
+.content-section {
+	flex-grow: 1;
+	min-height: 0;
+}
+
+/* Section below top navbar for hero image */
+
+.desert-hero-image-section {
+	width: 100vw;
+	height: calc(50vh - var(--navbar-height) / 2);
+	background: none;
+	display: block;
+	margin-top: var(--navbar-height);
+}
+
+.desert-hero-image-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: calc(50vh - var(--navbar-height) / 2);
+	background: none;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.desert-hero-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: bottom;
+	user-select: none;
+	pointer-events: none;
+	border-radius: 0;
+	display: block;
+}
+
+@media (max-width: 700px) {
+	.desert-hero-image-section {
+		height: calc(50vh - var(--navbar-height-mobile) / 2);
+		margin-top: var(--navbar-height-mobile);
+	}
+	.desert-hero-image-wrapper {
+		height: calc(50vh - var(--navbar-height-mobile) / 2);
+	}
+	.desert-hero-image {
+		max-width: 100vw;
+		height: 100%;
+	}
+}
+/* Import Google Fonts Thin 100 for bottom navbar label */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+.desert-navbar-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Bottom navbar nav and buttons */
+.desert-bottom-nav {
+	display: flex;
+	gap: 2.5vw;
+	width: 100vw;
+	justify-content: center;
+	align-items: center;
+}
+
+.desert-bottom-btn {
+	background: none;
+	border: none;
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 100;
+	font-size: 0.75rem;
+	letter-spacing: 0.18em;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 0 0.5em 0.2em 0.5em;
+	cursor: pointer;
+	outline: none;
+	border-bottom: 2.5px solid transparent;
+	transition: border-color 0.2s;
+	user-select: none;
+	min-width: 44px;
+	min-height: 44px;
+}
+
+.desert-bottom-btn.selected,
+.desert-bottom-btn:focus-visible {
+	border-bottom: 2.5px solid #fff;
+}
+
+.desert-bottom-btn:active {
+	color: #ffe6a0;
+}
+
+@media (max-width: 700px) {
+	.desert-bottom-nav {
+		gap: 4vw;
+	}
+	.desert-bottom-btn {
+		font-size: 0.5rem;
+		padding: 0 0.5em 0.15em 0.5em;
+		min-width: 40px;
+		min-height: 40px;
+	}
+}
+/* Bottom navbar label styling */
+:root {
+	--navbar-height: 110px;
+	--navbar-height-mobile: 64px;
+	--navbar-font-size: 3.2rem;
+	--navbar-font-size-mobile: 1.7rem;
+}
 /* --- Desert Page Navbars --- */
 .desert-navbar {
 	position: fixed;
@@ -9,7 +227,7 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 110px;
+		height: var(--navbar-height);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -20,52 +238,10 @@
 	bottom: 0;
 	left: 0;
 	width: 100vw;
-	height: 56px;
+		height: var(--navbar-height);
 	border-top: 1.5px solid #222;
 }
 
-.desert-navbar-left {
-	top: 0;
-	left: 0;
-	width: 60px;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 1.5px solid #222;
-}
-
-.desert-navbar-right {
-	top: 0;
-	right: 0;
-	width: 60px;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-left: 1.5px solid #222;
-}
-
-.desert-navbar-left button,
-.desert-navbar-right button {
-	writing-mode: vertical-rl;
-	transform: rotate(180deg);
-	background: none;
-	border: none;
-	color: #fff8;
-	font-size: 1.1rem;
-	margin: 0;
-	padding: 0.5rem 0;
-	cursor: pointer;
-	transition: color 0.2s;
-}
-.desert-navbar-left button.is-active,
-.desert-navbar-right button.is-active {
-	color: #ffe082;
-	font-weight: bold;
-}
 
 /* Main content area with navbars */
 .desert-content-area {
@@ -103,46 +279,47 @@
 			align-items: center;
 			justify-content: flex-start;
 			gap: 2rem;
-			border: none;
-		}
-/* Glass card title style to match previous desert card */
-.desert-glass-card-1 h2, .desert-glass-card-2 h2 {
-	font-family: 'Slackey', cursive, Arial, sans-serif;
-	font-size: 1.7rem;
-	color: #111;
-	letter-spacing: 0.18em;
-	text-align: left;
-	margin-bottom: 0.7rem;
-	text-transform: uppercase;
-	text-shadow: none;
-}
 
-.desert-glass-card-2 {
-	background: rgba(255, 236, 179, 0.24);
-	box-shadow: 0 4px 32px #c97d3d33, 0 1.5px 8px #e7a14b22;
-	border: 1.5px solid #c97d3d44;
-}
+			.desert-navbar {
+				position: fixed;
+				background: #000;
+				z-index: 100;
+			}
 
-.desert-role-desc ul {
-	margin: 0.2em 0 0.2em 1.2em;
-	padding: 0;
-	list-style-type: disc;
-}
+			.desert-navbar-top {
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 110px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-bottom: 1.5px solid #222;
+			}
 
-.desert-role-desc li {
-	margin-bottom: 0.3em;
-	font-size: 0.95em;
-	line-height: 1.5;
-}
+			.desert-navbar-bottom {
+				bottom: 0;
+				left: 0;
+				width: 100vw;
+				height: 56px;
+				border-top: 1.5px solid #222;
+			}
 
-/* Two-column layout for center content */
-.desert-center-columns {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: center;
-	gap: 2.5rem;
-	width: 100%;
+			.desert-top-title {
+				display: block;
+				font-family: 'Knewave', cursive, Arial, sans-serif;
+				font-size: 3.2rem;
+				color: #fff;
+				letter-spacing: 0.18em;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				text-shadow: 0 2px 16px #000a;
+				text-transform: uppercase;
+				background: none;
+				pointer-events: none;
+				user-select: none;
+			}
 	max-width: 1200px;
 	margin: 0 auto;
 	flex-wrap: wrap;
@@ -213,7 +390,7 @@
 .desert-top-title {
 			display: block;
 			font-family: 'Knewave', cursive, Arial, sans-serif;
-			font-size: 3.2rem;
+				font-size: var(--navbar-font-size);
 			color: #fff;
 			letter-spacing: 0.18em;
 			margin: 0;
@@ -226,71 +403,28 @@
 			user-select: none;
 }
 
-.desert-sidebar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 170px;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	z-index: 50;
-	background: transparent;
-	gap: 32px;
-}
 
 
-.sidebar-rotated-text {
-	font-family: 'Londrina Outline', Arial, sans-serif !important;
-	font-size: 2.1rem;
-	color: #111;
-	writing-mode: vertical-rl;
-	transform: rotate(-180deg);
-	letter-spacing: 0.09em;
-	margin: 0 0 0 24px;
-	text-shadow: 0 2px 8px #c97d3d33;
-	user-select: none;
-	font-weight: 400;
-	line-height: 1.1;
-	background: none;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 0;
-	transition: color 0.2s;
-	position: relative;
-	box-shadow: none;
-}
-
-
-			.sidebar-rotated-text:hover {
-				color: #e7a14b;
-			}
-
-
-			.sidebar-rotated-text.is-active {
-				color: #111;
-				border: 3px solid #111;
-				border-radius: 18px;
-				background: #fff8;
-				padding: 0.5em 0.3em;
-			}
-@media (max-width: 1024px) {
-	.desert-center-columns {
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-		max-width: 98vw;
+@media (max-width: 700px) {
+	:root {
+		--navbar-height: var(--navbar-height-mobile);
+		--navbar-font-size: var(--navbar-font-size-mobile);
 	}
-	.desert-center-col {
+	.desert-navbar-top,
+	.desert-navbar-bottom {
+		height: var(--navbar-height);
+		min-height: var(--navbar-height);
+		max-height: var(--navbar-height);
+		padding: 0;
+	}
+	.desert-top-title {
+		font-size: var(--navbar-font-size);
+		padding: 0 0.5em;
+		word-break: break-word;
+	}
+	html, body {
+		width: 100vw;
 		min-width: 0;
-		max-width: 98vw;
-		width: 100%;
-	}
-	.desert-center-content {
-		max-width: 98vw;
-		padding: 0 1rem;
+		overflow-x: hidden;
 	}
 }

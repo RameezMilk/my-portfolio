@@ -1,103 +1,70 @@
+import StickyMapButton from "../components/StickyMapButton";
+import DecodeText from "../components/DecodeText";
 
 import "../styles/Desert.css";
 
-import StickyMapButton from "../components/StickyMapButton";
+
+
 import MapModal from "../components/MapModal";
 import { useState } from "react";
-import DecodeText from "../components/DecodeText";
+
 
 
 const DesertPage = () => {
 	const [mapOpen, setMapOpen] = useState(false);
-	const [selectedSection, setSelectedSection] = useState("EDUCATION");
-	const [decodeReveal, setDecodeReveal] = useState(true);
-
-	const handleSectionClick = (section) => {
-		setDecodeReveal(false);
-		setSelectedSection(section); // selection happens immediately
-		setTimeout(() => {
-			setDecodeReveal(true);
-		}, 600);
-	};
+		const [selected, setSelected] = useState("EDUCATION");
 
 	return (
 		<>
-				<div className="desert-navbar desert-navbar-top">
-					<span className="desert-top-title">
-						<DecodeText text={selectedSection} revealed={decodeReveal} />
-					</span>
-				</div>
-			<div className="desert-navbar desert-navbar-bottom" />
-			<div className="desert-navbar desert-navbar-left">
-				<button
-					className={"sidebar-rotated-text education" + (selectedSection === "EDUCATION" ? " is-active" : "")}
-					onClick={() => handleSectionClick("EDUCATION")}
-					tabIndex={0}
-				>
-					Education
-				</button>
-			</div>
-			<div className="desert-navbar desert-navbar-right">
-				<button
-					className={"sidebar-rotated-text experience" + (selectedSection === "EXPERIENCE" ? " is-active" : "")}
-					onClick={() => handleSectionClick("EXPERIENCE")}
-					tabIndex={0}
-				>
-					Experience
-				</button>
-			</div>
-				<div className="desert-content-area">
-					<section className="biome-section desert">
-					<div className="desert-glass-stack">
-						{selectedSection === "EDUCATION" ? (
-							<>
-								<div className="desert-glass-card-1">
-									<div>
-										<h2 style={{margin: 0, fontSize: '2rem'}}>Student @ NC State University</h2>
-										<ul style={{margin: '1.2em 0 0 1.2em'}}>
-											<li>Bachelor of Science in Computer Science (ABM Program)</li>
-											<li>Focus: Applied AI & Software Engineering</li>
-											<li>Competitive Programming Club member</li>
-										</ul>
-									</div>
+									<div className="desert-navbar desert-navbar-top">
+									<span className="desert-top-title">
+										<DecodeText text="EDUCATION" revealed={true} />
+									</span>
 								</div>
-								<div className="desert-glass-card-2">
-									<div>
-										<h2 style={{margin: 0, fontSize: '2rem'}}>Student @ WakeTech College</h2>
-										<ul style={{margin: '1.2em 0 0 1.2em'}}>
-											<li>Associate in Engineering transfer pathway</li>
-											<li>Honors Program & Sigma Kappa Delta member</li>
-											<li>High academic performance</li>
-										</ul>
-									</div>
-								</div>
-							</>
-						) : (
-							<>
-								<div className="desert-glass-card-1">
-									<div>
-										<h2 style={{margin: 0, fontSize: '2rem'}}>Full Stack Intern @ Axiom</h2>
-										<ul style={{margin: '1.2em 0 0 1.2em'}}>
-											<li>Built and maintained flagship CRM platform</li>
-											<li>Developed secure RESTful C# APIs & Angular UIs</li>
-											<li>Used Azure DevOps for agile project tracking</li>
-										</ul>
-									</div>
-								</div>
-								<div className="desert-glass-card-2">
-									<div>
-										<h2 style={{margin: 0, fontSize: '2rem'}}>Web Developer @ Bayan Institute</h2>
-										<ul style={{margin: '1.2em 0 0 1.2em'}}>
-											<li>Designed and deployed donation-driven platform</li>
-											<li>Aligned platform with organizational goals</li>
-											<li>Supported ongoing fundraising initiatives</li>
-										</ul>
-									</div>
-								</div>
-							</>
-						)}
-					</div>
-				</section>
+																<div className="desert-hero-image-section desert-hero-image-wrapper">
+																  <img
+																    src="/images/education-desert.jpeg"
+																    alt="Education Desert"
+																    className="desert-hero-image"
+																    draggable="false"
+																  />
+																</div>
+
+																				<div className="content-section">
+																				  <div className="edu-cards-row">
+																							<div className="edu-card edu-1">
+																								<div className="edu-title">Wake Technical Community College</div>
+																								<ul className="edu-list">
+																									<li>Associate in Engineering (2022-2023)</li>
+																								</ul>
+																							</div>
+																								<div className="edu-card edu-2">
+																									<div className="edu-title">North Carolina State University</div>
+																									<ul className="edu-list">
+																										<li>Bachelor's of Science in Computer Science (2023-2025)</li>
+																									</ul>
+																								</div>
+																				  </div>
+																				</div>
+			<div className="desert-navbar desert-navbar-bottom">
+			  <nav className="desert-bottom-nav" aria-label="Inspire or Growth">
+							<button
+								className={`desert-bottom-btn${selected === "EDUCATION" ? " selected" : ""}`}
+								aria-current={selected === "EDUCATION" ? "page" : undefined}
+								onClick={() => setSelected("EDUCATION")}
+								type="button"
+							>
+								EDUCATION
+							</button>
+							<button
+								className={`desert-bottom-btn${selected === "EXPERIENCE" ? " selected" : ""}`}
+								aria-current={selected === "EXPERIENCE" ? "page" : undefined}
+								onClick={() => setSelected("EXPERIENCE")}
+								type="button"
+							>
+								EXPERIENCE
+							</button>
+			  </nav>
 			</div>
 			<StickyMapButton onClick={() => setMapOpen(true)} />
 			<MapModal open={mapOpen} onClose={() => setMapOpen(false)} />
