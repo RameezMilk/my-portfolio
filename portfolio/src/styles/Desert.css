@@ -1,11 +1,81 @@
+/* Experience card button styles */
+button {
+	background: #fbca1f;
+	font-family: inherit;
+	padding: 0.6em 1.3em;
+	font-weight: 900;
+	font-size: 18px;
+	border: 3px solid black;
+	border-radius: 0.4em;
+	box-shadow: 0.1em 0.1em;
+	cursor: pointer;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+button:hover {
+	transform: translate(-0.05em, -0.05em);
+	box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+	transform: translate(0.05em, 0.05em);
+	box-shadow: 0.05em 0.05em;
+}
+/* Center content for Education cards only */
+.edu-card-center {
+	align-items: center !important;
+	justify-content: center !important;
+	text-align: center;
+	padding-top: 0 !important;
+	height: 100%;
+}
+.edu-card-center .edu-title {
+	text-align: center;
+	margin-top: 0.5rem !important;
+}
+.edu-card-center .edu-list {
+	text-align: center;
+}
+/* Italicize the role + timeframe line in Experience card titles */
+.role-timeframe {
+	font-style: italic;
+}
+/* Larger font for company name in Experience card titles */
+.company-name {
+	font-size: 1.65rem;
+	font-weight: 800;
+	margin-top: 1.2rem;
+	padding-top: 0;
+}
+/* Neon orange for Bayan International Islamic Institute */
+.neon-orange {
+	color: #FF8A05;
+	text-shadow: 0 0 8px #FF8A05, 0 0 16px #FF8A05;
+}
+
+/* Neon blue for Axiom Software */
+.neon-blue {
+	color: #007FFF;
+	text-shadow: 0 0 8px #007FFF, 0 0 16px #007FFF;
+}
+
 /* Education card title and list */
 .edu-title {
 	color: #fff;
 	font-weight: 800;
 	font-size: 1.15rem;
 	margin-bottom: 1.2em;
+	margin-top: 0;
+	padding-top: 0;
 	text-align: center;
 	letter-spacing: 0.01em;
+}
+
+
+/* Add spacing between lines in multi-line experience titles */
+.edu-title > div + div {
+	margin-top: 0.25em;
 }
 
 .edu-list {
@@ -26,7 +96,6 @@
 		justify-content: center;
 		align-items: stretch;
 		gap: 2rem;
-		height: 100%;
 		width: 100%;
 		max-width: 1200px;
 		margin: 0 auto;
@@ -37,17 +106,22 @@
 		background: none;
 		box-shadow: none;
 		border: 2px dashed #ffe600;
-			min-width: 160px;
-			min-height: 80px;
-			max-height: 90%;
-			flex: 1 1 0;
-			max-width: 48%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			box-sizing: border-box;
-}
+		min-width: 480px;
+		max-width: 600px;
+		flex: 1 1 540px;
+		min-height: 120px;
+		max-height: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		box-sizing: border-box;
+		font-size: 1.35rem;
+		padding-top: 0.5rem;
+	}
+	.edu-card-center {
+		padding-top: 0 !important;
+	}
 
 @media (max-width: 700px) {
 		.edu-cards-row {
@@ -60,6 +134,13 @@
 				max-width: 98vw;
 				min-height: 60px;
 				max-height: 40vw;
+				font-size: 1.05rem;
+			}
+			.edu-title {
+				font-size: 1.3rem;
+			}
+			.edu-list {
+				font-size: 1.05rem;
 			}
 }
 /* Content section between hero image and bottom navbar */
@@ -76,6 +157,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		border: 3px solid red;
 }
 @media (max-width: 700px) {
 	.content-section {
@@ -186,15 +268,15 @@ body, #root, .App {
 	transition: border-color 0.2s;
 	user-select: none;
 	min-width: 44px;
-	min-height: 44px;
-}
-
-.desert-bottom-btn.selected,
-.desert-bottom-btn:focus-visible {
-	border-bottom: 2.5px solid #fff;
-}
-
-.desert-bottom-btn:active {
+	min-height: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	font-size: 1.35rem;
+	padding-top: 0.5rem;
 	color: #ffe6a0;
 }
 
