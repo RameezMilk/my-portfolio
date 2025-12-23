@@ -88,13 +88,7 @@ const DesertPage = () => {
               <div>
                 {Array.isArray(card.title) ? (
                   <div className="edu-title">
-                    <div className="company-name">
-                      {card.title[0] === "Bayan International Islamic Institute" ? (
-                        <span className="neon-orange">{card.title[0]}</span>
-                      ) : card.title[0] === "Axiom Software" ? (
-                        <span className="neon-blue">{card.title[0]}</span>
-                      ) : card.title[0]}
-                    </div>
+                    <div className="company-name">{card.title[0]}</div>
                     <div className="role-timeframe">{card.title[1]}</div>
                   </div>
                 ) : (
@@ -105,7 +99,29 @@ const DesertPage = () => {
                 </ul>
               </div>
               {selected === "EXPERIENCE" && (
-                <button type="button">Learn More</button>
+                <a
+                  href={
+                    idx === 0
+                      ? "https://bayaniii.org/"
+                      : "https://axiomworkspace.com/"
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <button className="btn cubic-button" type="button">
+                    <div className="bg-top">
+                      <div className="bg-inner"></div>
+                    </div>
+                    <div className="bg-right">
+                      <div className="bg-inner"></div>
+                    </div>
+                    <div className="bg">
+                      <div className="bg-inner"></div>
+                    </div>
+                    <div className="text">Learn More</div>
+                  </button>
+                </a>
               )}
             </div>
           ))}
